@@ -100,15 +100,16 @@ body{
     background-color: #1c6494;
 }
 .descArea .content {
-    font-family: "Lucida Sans Unicode";
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: left;
     margin:0px 20px;
 }
-.descArea .content #subhead{
+.descArea .content #subject{
     font-size: 25px;
+    color: #3a3939;
 }
-.descArea .content #desc1,#desc2#desc3,#desc4{
-    color: #4d4d4d;
+.descArea .content #desc1,#desc2,#desc3,#desc4{
+    color: #4b4a4a;
     font-size: 16px;
 }
 .descArea .content #selection{

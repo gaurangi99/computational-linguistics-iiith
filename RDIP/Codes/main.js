@@ -281,7 +281,8 @@ function languageDropdown() {
         desc4.innerHTML = '';
         finalSentence = '';
         result.innerHTML = '';
-        selDesc.innerHTML ='<br><br><b>Form a sentence (Declarative or Interrogative or any other type) from the given words</b>';
+        selDesc.style.color='darkblue';
+        selDesc.innerHTML ='<center><br><br><b>Form a sentence (Declarative or Interrogative or any other type) from the given words</b></center>';
         desc3.style.color = 'blue';
         desc3.innerHTML ='<center><i>(select the buttons in proper order)</i></center>';
         randNo = Math.floor(Math.random() * 9);
@@ -309,7 +310,8 @@ function languageDropdown() {
         desc4.innerHTML = '';
         finalSentence = '';
         result.innerHTML = '';
-        selDesc.innerHTML ='<br><br><b>Form a sentence (Declarative or Interrogative or any other type) from the given words</b>';
+        selDesc.style.color='darkblue';
+        selDesc.innerHTML ='<center><br><br><b>Form a sentence (Declarative or Interrogative or any other type) from the given words</b></center>';
         desc3.style.color = 'blue';
         desc3.innerHTML ='<center><i>(select the buttons in proper order)</i></center>';
         randNo = Math.floor(Math.random() * 6);
