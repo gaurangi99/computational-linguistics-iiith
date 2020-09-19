@@ -186,7 +186,7 @@ function reformSentence() {
     correctAns.innerHTML = '';
 }
 
-//generates the forming sentence
+//generates the forming sentence & shows to check the correct sentence
 function formSentence(id, value) {
         desc4.style.textAlign = 'center';
         desc4.innerHTML ="<br><font color='darkblue'><b>Formed Sentence</b></font><font color='blue'> <i>(after selecting words):</i></font><br>";
