@@ -201,6 +201,36 @@ function formSentence(id, value) {
     }
 }
 
+//hides the correct sentence
+function hideCorrect() {
+    result.innerHTML ="<center><font color = 'red'>Wrong Answer!!!</font><br><button id='showAnsBtn' onclick='getCorrectToggle()'>Get Answers</button></center>";
+    correctAns.style.display = 'none';
+}
+
+//shows the correct sentence(s)
+function getCorrect() {
+    ans = '';
+    var totalAns = 0;
+    correctAns.innerHTML = '';
+    if (lang == 'English') {
+        totalAns = engCorpus[randNo].length - 1;
+        result.innerHTML ="<center><font color = 'red'>Wrong Answer!!!</font><br><button id='showAnsBtn' onclick='hideCorrect()'>Hide correct Sentence</button></center>";
+        for (i = 0; i <= totalAns; i++) {
+        ans += '<center>' + engCorpus[randNo][i] + '<br></center>';
+    }
+    correctAns.style.display = '';
+    correctAns.innerHTML = ans;
+    } else if (lang == 'Hindi') {
+        totalAns = hinCorpus[randNo].length - 1;
+        result.innerHTML ="<center><font color = 'red'>Wrong Answer!!!</font><br><button id='showAnsBtn' onclick='hideCorrect()'>Hide the correct Sentence</button></center>";
+        for (i = 0; i <= totalAns; i++) {
+        ans += '<center>' + hinCorpus[randNo][i] + '<br></center>';
+    }
+    correctAns.style.display = '';
+    correctAns.innerHTML = ans;
+    }
+}
+
 //correction is checked over, shows Right/Wrong answer
 //if Wrong ans, displays Get Correct Sentence
 function correctionCheck() {
@@ -214,7 +244,7 @@ function correctionCheck() {
     if (res == true)
         result.innerHTML ="<center><font color = 'green'>Right Answer!!!</font></center>";
     else
-        result.innerHTML ="<center><font color = 'red'>Wrong Answer!!!</font><br><button id='showAnsBtn' onclick='getCorrect()'>Get correct sentence</button></center>";
+        result.innerHTML ="<center><font color = 'red'>Wrong Answer!!!</font><br><button id='showAnsBtn' onclick='getCorrect()'>Get Correct Sentence</button></center>";
 }
 
 //choosing the language
