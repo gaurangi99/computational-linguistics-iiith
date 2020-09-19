@@ -201,6 +201,22 @@ function formSentence(id, value) {
     }
 }
 
+//correction is checked over, shows Right/Wrong answer
+//if Wrong ans, displays Get Correct Sentence
+function correctionCheck() {
+    var fs = finalSentence.trim();
+    var res;
+    correctAns.innerHTML = '';
+    if (lang == 'English') 
+        res = engCorpus[randNo].includes(fs);
+    else if (lang == 'Hindi') 
+        res = hinCorpus[randNo].includes(fs);
+    if (res == true)
+        result.innerHTML ="<center><font color = 'green'>Right Answer!!!</font></center>";
+    else
+        result.innerHTML ="<center><font color = 'red'>Wrong Answer!!!</font><br><button id='showAnsBtn' onclick='getCorrect()'>Get correct sentence</button></center>";
+}
+
 //choosing the language
 function languageDropdown() {
     lang = '';
