@@ -91,7 +91,7 @@ var desc3 = document.getElementById('desc3');
 var desc4 = document.getElementById('desc4');
 var sentence = document.getElementById('sentence');
 var reform = document.getElementById('reformButton');
-var correctness = document.getElementById('correctness');
+var correctness = document.getElementById('correctnessButton');
 var result = document.getElementById('resultButton');
 var correctAns = document.getElementById('correctAns');
 var j, btnCount, randNo;
@@ -104,54 +104,54 @@ function intro() {
     heading.innerHTML = 'Introduction';
     desc1.innerHTML ='A sentence can become more complex, if more than one verb is present or by joining two sentences or words using conjunctions or by some other methods.';
     desc2.innerHTML ='<br>In this experiment also, you will make more difficult sentences using the given words.';
-    /* desc3.innerHTML = '';
+    desc3.innerHTML = '';
     select.innerHTML = '';
-    selDesc.innerHTML = ''; */
+    selDesc.innerHTML = '';
     desc2.style.textAlign = 'left';
-    /* desc4.innerHTML = ''; */
+    desc4.innerHTML = '';
     desc4.style.textAlign = 'left';
-    /* sentence.innerHTML = '';
+    sentence.innerHTML = '';
     reform.innerHTML = '';
     correctness.innerHTML = '';
     result.innerHTML = '';
     ans = '';
-    correctAns.innerHTML = ''; */
+    correctAns.innerHTML = '';
 }
 
 function theory() {
     heading.innerHTML = 'Theory';
     desc.innerHTML ='<u><b>Clause</b></U><br>A clause typically contains a subject noun phrase and a finite verb. Some languages allow subjects to be omitted. There are two types of subclauses:<ol><li>independent clause</li><li>subordinate clause</li></ol>Independent clause shows the complete meaning in it. For example: Ram eats. A subordinate clause is not a complete sentence. For example: because I am sick. Sentences can also be classified on the basis of clauses.';
     desc2.innerHTML ='<br>Classification on the basis of clauses are:<br><ol><li>A <b>simple sentence</b> consists of only one independent clause. There are no subordinate clauses.</li><li>A <b>compound sentence</b> consists of more than one independent clauses joined ny conjunctions or punctuations. There are no subordinate clauses.</li><li>A <b>complex sentence</b> consists of atleast one indpendent clause and a single subordinate clause</li><li>A <b>complex-compound sentence</b> consists of more than one independent clauses and atleast one of the independent clauses has one or more than one subordinate clauses</li></ol>';
-    /* desc3.innerHTML = '';
+    desc3.innerHTML = '';
     select.innerHTML = '';
-    selDesc.innerHTML = ''; */
+    selDesc.innerHTML = '';
     desc2.style.textAlign = 'left';
-    /* desc4.innerHTML = '';
-    sentence.innerHTML = ''; */
+    desc4.innerHTML = '';
+    sentence.innerHTML = '';
     desc4.style.textAlign = 'left';
-    /* reform.innerHTML = '';
+    reform.innerHTML = '';
     correctness.innerHTML = '';
     result.innerHTML = '';
     ans = '';
-    correctAns.innerHTML = ''; */
+    correctAns.innerHTML = '';
 }
 
 function objective() {
     heading.innerHTML = 'Objective';
     desc.innerHTML ='<br><hr><br><br>The objective of this experiment is to know how to form logically correct sentences from the given words.<br>';
     desc2.innerHTML = '<br><hr>';
-    /* desc3.innerHTML = '';
+    desc3.innerHTML = '';
     select.innerHTML = '';
-    selDesc.innerHTML = ''; */
+    selDesc.innerHTML = '';
     desc2.style.textAlign = 'left';
-    /* desc4.innerHTML = ''; */
+    desc4.innerHTML = '';
     desc4.style.textAlign = 'left';
-    /* sentence.innerHTML = '';
+    sentence.innerHTML = '';
     reform.innerHTML = '';
     correctness.innerHTML = '';
     result.innerHTML = '';
     ans = '';
-    correctAns.innerHTML = ''; */
+    correctAns.innerHTML = '';
 }
 
 function insideRandom(jumbledWords) {
@@ -167,6 +167,35 @@ function insideRandom(jumbledWords) {
         jumbled[rand_i] = tmp;
     }
     return jumbled;
+}
+
+function reformSentence() {
+    for (i = 0; i <= j.length - 1; i++) {
+        document.getElementById('btn' + i).style.display = '';
+    }
+    finalSentence = '';
+    sentence.innerHTML = finalSentence;
+    reform.innerHTML = '';
+    desc4.innerHTML = '';
+    correctness.innerHTML = '';
+    clickCount = 0;
+    result.innerHTML = '';
+    ans = '';
+    correctAns.innerHTML = '';
+}
+
+function formSentence(id, value) {
+        desc4.style.textAlign = 'center';
+        desc4.innerHTML ="<br><font color='darkblue'><b>Formed Sentence</b></font><font color='blue'> <i>(after selecting words):</i></font><br>";
+        finalSentence += value + ' ';
+        sentence.style.textAlign = 'center';
+        sentence.innerHTML = finalSentence;
+        document.getElementById(id).style.display = 'none';
+        reform.innerHTML ="<center><button id='reform' onclick='reformSentence()'>Re-form the sentence</button></center>";
+        clickCount++;
+        if (btnCount == clickCount) {
+        correctness.innerHTML ="<center><button id='correctness' onclick='correctionCheck()'>Check the correctness of this sentence</button></center>";
+    }
 }
 
 function languageDropdown() {
@@ -248,18 +277,18 @@ function languageDropdown() {
 function experiment() {
     heading.innerHTML = '<b>Experiment</b>';
     select.innerHTML ="<center><select id='language' onchange = 'languageDropdown()'><option value='select'>---Select Language---</option><option value='English'>English</option><option value='Hindi'>Hindi</option></select></center>";
-    // selDesc.innerHTML = '';
-    // desc3.innerHTML = '';
-    // desc.innerHTML = '';
-    // desc2.innerHTML = '';
-    // desc4.innerHTML = '';
+    selDesc.innerHTML = '';
+    desc3.innerHTML = '';
+    desc.innerHTML = '';
+    desc2.innerHTML = '';
+    desc4.innerHTML = '';
     desc4.style.textAlign = 'left';
-    // sentence.innerHTML = '';
-    // reform.innerHTML = '';
-    // correctness.innerHTML = '';
-    // result.innerHTML = '';
-    // ans = '';
-    // correctAns.innerHTML = '';
+    sentence.innerHTML = '';
+    reform.innerHTML = '';
+    correctness.innerHTML = '';
+    result.innerHTML = '';
+    ans = '';
+    correctAns.innerHTML = '';
 }
 
 function quizzes() {
