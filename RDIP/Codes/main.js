@@ -201,6 +201,12 @@ function formSentence(id, value) {
     }
 }
 
+//again displays the Hide the correct Sentence button i.e. now completes the toggle functionality 
+function getCorrectToggle() {
+    correctAns.style.display = '';
+    result.innerHTML ="<center><font color = 'red'>Wrong Answer!!!</font><br><button id='showAnsBtn' onclick='hideCorrect()'>Hide the correct Sentence</button></center>";
+}
+
 //hides the correct sentence
 function hideCorrect() {
     result.innerHTML ="<center><font color = 'red'>Wrong Answer!!!</font><br><button id='showAnsBtn' onclick='getCorrectToggle()'>Get Answers</button></center>";
