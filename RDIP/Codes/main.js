@@ -154,6 +154,7 @@ function objective() {
     correctAns.innerHTML = '';
 }
 
+//generates random jumbled words using the language corpus arrays
 function insideRandom(jumbledWords) {
     var jumbled = jumbledWords.split(' ');
     var i = jumbled.length,
@@ -169,6 +170,7 @@ function insideRandom(jumbledWords) {
     return jumbled;
 }
 
+//reforms the jumbled words again
 function reformSentence() {
     for (i = 0; i <= j.length - 1; i++) {
         document.getElementById('btn' + i).style.display = '';
@@ -184,6 +186,7 @@ function reformSentence() {
     correctAns.innerHTML = '';
 }
 
+//generates the forming sentence
 function formSentence(id, value) {
         desc4.style.textAlign = 'center';
         desc4.innerHTML ="<br><font color='darkblue'><b>Formed Sentence</b></font><font color='blue'> <i>(after selecting words):</i></font><br>";
@@ -198,6 +201,7 @@ function formSentence(id, value) {
     }
 }
 
+//choosing the language
 function languageDropdown() {
     lang = '';
     lang = document.getElementById('language').value;
@@ -274,6 +278,7 @@ function languageDropdown() {
     }
 }
 
+//main experiment area where the whole functioning is taking place, it is the calling function for all the functionalities
 function experiment() {
     heading.innerHTML = '<b>Experiment</b>';
     select.innerHTML ="<center><select id='language' onchange = 'languageDropdown()'><option value='select'>---Select Language---</option><option value='English'>English</option><option value='Hindi'>Hindi</option></select></center>";
