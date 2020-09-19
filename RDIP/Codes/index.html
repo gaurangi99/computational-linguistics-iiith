@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Labs</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script data-main = "main" src = "../Libraries/requireJS.js"></script>   <!--requireJS.js Library file initialized-->
+</head>
+<body>
+    <div>
+        <img src="images/logo.jpg">
+    </div>
+    <div class="header"><h2 id="heading">
+        <a href="http://cl-iiith.vlabs.ac.in/index.html">COMPUTATIONAL LINGUISTICS LAB</a></h2>
+    </div>
+    <div class="navBar">
+        <ul>
+            <li><a href="http://cl-iiith.vlabs.ac.in/index.html">Home></a></li>
+            <li><a href="http://cl-iiith.vlabs.ac.in/index.html">Computational Linguistics Lab></a></li>
+            <li><a href="index.html">Forming Sentences - 2</a></li>
+        </ul>
+    </div>
+    <div class="mainArea">
+        <h1 id="mainHeading">Forming Sentences - 2</h1>
+        <div class="descArea">
+            <ul>
+            <button class="navBarButtons" onclick="intro()">
+            <img class="img" src="images/introduction.jpg"><br>INTRODUCTION</button>
+            <button class="navBarButtons" onclick="theory()">
+            <img class="img" src="images/theory.jpg" /><br>THEORY</button>
+            <button class="navBarButtons" onclick="objective()">
+            <img class="img" src="images/objective.jpg" /><br>OBJECTIVE</button>
+            <button class="navBarButtons" onclick="experiment()">
+            <img class="img" src="images/simulation.jpg" /><br>EXPERIMENT</button>
+            <button class="navBarButtons" onclick="quizzes()">
+            <img class="img" src="images/quizzes.jpg" /><br>QUIZZES</button>
+            <button class="navBarButtons" onclick="procedure()">
+            <img class="img" src="images/procedure.jpg" /><br>PROCEDURE</button>
+            </ul>
+            <div class="content">
+                <p id="subject">Introduction</p>
+                <p id="select"></p>
+                <p id="selDesc"></p>
+                <p id="desc1">
+                    A sentence can become more complex, if more than one verb is present
+                    other methods.<br>
+                </p>
+                <p id="desc3"></p>
+                <p id="desc2">
+                    In this experiment also, you will make more difficult sentences
+                    using the given words.
+                </p>
+                <p id="desc4"></p>
+                <h1 id="sentence"></h1>
+                <p id="reformButton"></p>
+                <p id="correctnessButton"></p>
+                <h1 id="resultButton"></h1>
+                <p id="correctAns"></p>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
+    
