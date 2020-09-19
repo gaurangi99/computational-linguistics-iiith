@@ -94,11 +94,12 @@ var reform = document.getElementById('reformButton');
 var correctness = document.getElementById('correctness');
 var result = document.getElementById('resultButton');
 var correctAns = document.getElementById('correctAns');
-var j, btnCount, r;
+var j, btnCount, randNo;
 var finalSentence = '';
 var clickCount = 0;
-var x;
+var lang;
 var ans = '';
+
 function intro() {
     heading.innerHTML = 'Introduction';
     desc1.innerHTML ='A sentence can become more complex, if more than one verb is present or by joining two sentences or words using conjunctions or by some other methods.';
@@ -116,6 +117,7 @@ function intro() {
     ans = '';
     correctAns.innerHTML = ''; */
 }
+
 function theory() {
     heading.innerHTML = 'Theory';
     desc.innerHTML ='<u><b>Clause</b></U><br>A clause typically contains a subject noun phrase and a finite verb. Some languages allow subjects to be omitted. There are two types of subclauses:<ol><li>independent clause</li><li>subordinate clause</li></ol>Independent clause shows the complete meaning in it. For example: Ram eats. A subordinate clause is not a complete sentence. For example: because I am sick. Sentences can also be classified on the basis of clauses.';
@@ -133,6 +135,7 @@ function theory() {
     ans = '';
     correctAns.innerHTML = ''; */
 }
+
 function objective() {
     heading.innerHTML = 'Objective';
     desc.innerHTML ='<br><hr><br><br>The objective of this experiment is to know how to form logically correct sentences from the given words.<br>';
@@ -149,6 +152,21 @@ function objective() {
     result.innerHTML = '';
     ans = '';
     correctAns.innerHTML = ''; */
+}
+
+function insideRandom(jumbledWords) {
+    var jumbled = jumbledWords.split(' ');
+    var i = jumbled.length,
+    rand_i,
+    tmp;
+    while (i!==0) {
+        rand_i = Math.floor(Math.random() * i);
+        i -= 1;
+        tmp = jumbled[i];
+        jumbled[i] = jumbled[randomi];
+        jumbled[rand_i] = tmp;
+    }
+    return jumbled;
 }
 
 function languageDropdown() {
@@ -211,7 +229,7 @@ function languageDropdown() {
         desc3.innerHTML ='<center><i>(select the buttons in proper order)</i></center>';
         randNo = Math.floor(Math.random() * 6);
         var jumbledWords = hinCorpus[randNo][0];
-        j = insiderandomizer(jumbledWords);
+        j = insideRandom(jumbledWords);
         desc2.style.textAlign = 'center';
         var b = '';
         var bs = '';
@@ -226,6 +244,7 @@ function languageDropdown() {
         desc2.innerHTML = bs.trim();
     }
 }
+
 function experiment() {
     heading.innerHTML = '<b>Experiment</b>';
     select.innerHTML ="<center><select id='language' onchange = 'languageDropdown()'><option value='select'>---Select Language---</option><option value='English'>English</option><option value='Hindi'>Hindi</option></select></center>";
@@ -242,6 +261,7 @@ function experiment() {
     // ans = '';
     // correctAns.innerHTML = '';
 }
+
 function quizzes() {
     heading.innerHTML = 'Quizzes';
     desc.innerHTML ='Which of these is a valid sentence?<ol><li>Ram came after lunch.</li><li>Ram came after having lunch.</li><li>Sleeping I saw a tiger.</li><li>I saw a sleeping tiger.</li><li>No Parking is allowed.</li></ol>';
@@ -259,6 +279,7 @@ function quizzes() {
     // ans = '';
     // correctAns.innerHTML = '';
 }
+
 function procedure() {
     heading.innerHTML = 'Procedure';
     desc.innerHTML ='<b><u>STEP 1:</u></b> Select a language which you know better<br><b><u>STEP 2:</u></b> Select the buttons which has words written on it, in a proper order<br><b><u>OUTPUT:</u></b> Group of words in a selected order will be shown<br>';
